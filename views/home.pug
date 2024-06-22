@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title #{title}
+		script(defer type="module", src="/js/home.js") 
+	body 
+		h2 Home Page heading
+
+		each user in users
+			p
+				span= user.name
+				span | 
+				span= user.email
+				button Delete
+
+		pre #{JSON.stringify(users, null, 2)}
+
+		script.
+			const users = !{usersJs}
+
